@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fuzz module &mdash; RapidFuzz 2.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="string_metric module" href="string_metric.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> RapidFuzz
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">fuzz module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ratio">ratio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#partial-ratio">partial_ratio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#token-set-ratio">token_set_ratio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#partial-token-set-ratio">partial_token_set_ratio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#token-sort-ratio">token_sort_ratio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#partial-token-sort-ratio">partial_token_sort_ratio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#token-ratio">token_ratio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#partial-token-ratio">partial_token_ratio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wratio">WRatio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#qratio">QRatio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="string_metric.html">string_metric module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process.html">process module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils module</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RapidFuzz</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>fuzz module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/fuzz.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fuzz-module">
+<h1>fuzz module<a class="headerlink" href="#fuzz-module" title="Permalink to this headline"></a></h1>
+<section id="ratio">
+<h2>ratio<a class="headerlink" href="#ratio" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rapidfuzz.fuzz.ratio">
+<span class="sig-prename descclassname"><span class="pre">rapidfuzz.fuzz.</span></span><span class="sig-name descname"><span class="pre">ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rapidfuzz.fuzz.ratio" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="partial-ratio">
+<h2>partial_ratio<a class="headerlink" href="#partial-ratio" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rapidfuzz.fuzz.partial_ratio">
+<span class="sig-prename descclassname"><span class="pre">rapidfuzz.fuzz.</span></span><span class="sig-name descname"><span class="pre">partial_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rapidfuzz.fuzz.partial_ratio" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="token-set-ratio">
+<h2>token_set_ratio<a class="headerlink" href="#token-set-ratio" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rapidfuzz.fuzz.token_set_ratio">
+<span class="sig-prename descclassname"><span class="pre">rapidfuzz.fuzz.</span></span><span class="sig-name descname"><span class="pre">token_set_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor=&lt;cyfunction</span> <span class="pre">default_process&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_cutoff=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rapidfuzz.fuzz.token_set_ratio" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="partial-token-set-ratio">
+<h2>partial_token_set_ratio<a class="headerlink" href="#partial-token-set-ratio" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rapidfuzz.fuzz.partial_token_set_ratio">
+<span class="sig-prename descclassname"><span class="pre">rapidfuzz.fuzz.</span></span><span class="sig-name descname"><span class="pre">partial_token_set_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor=&lt;cyfunction</span> <span class="pre">default_process&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_cutoff=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rapidfuzz.fuzz.partial_token_set_ratio" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="token-sort-ratio">
+<h2>token_sort_ratio<a class="headerlink" href="#token-sort-ratio" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rapidfuzz.fuzz.token_sort_ratio">
+<span class="sig-prename descclassname"><span class="pre">rapidfuzz.fuzz.</span></span><span class="sig-name descname"><span class="pre">token_sort_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor=&lt;cyfunction</span> <span class="pre">default_process&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_cutoff=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rapidfuzz.fuzz.token_sort_ratio" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="partial-token-sort-ratio">
+<h2>partial_token_sort_ratio<a class="headerlink" href="#partial-token-sort-ratio" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rapidfuzz.fuzz.partial_token_sort_ratio">
+<span class="sig-prename descclassname"><span class="pre">rapidfuzz.fuzz.</span></span><span class="sig-name descname"><span class="pre">partial_token_sort_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor=&lt;cyfunction</span> <span class="pre">default_process&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_cutoff=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rapidfuzz.fuzz.partial_token_sort_ratio" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="token-ratio">
+<h2>token_ratio<a class="headerlink" href="#token-ratio" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rapidfuzz.fuzz.token_ratio">
+<span class="sig-prename descclassname"><span class="pre">rapidfuzz.fuzz.</span></span><span class="sig-name descname"><span class="pre">token_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor=&lt;cyfunction</span> <span class="pre">default_process&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_cutoff=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rapidfuzz.fuzz.token_ratio" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="partial-token-ratio">
+<h2>partial_token_ratio<a class="headerlink" href="#partial-token-ratio" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rapidfuzz.fuzz.partial_token_ratio">
+<span class="sig-prename descclassname"><span class="pre">rapidfuzz.fuzz.</span></span><span class="sig-name descname"><span class="pre">partial_token_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor=&lt;cyfunction</span> <span class="pre">default_process&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_cutoff=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rapidfuzz.fuzz.partial_token_ratio" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="wratio">
+<h2>WRatio<a class="headerlink" href="#wratio" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rapidfuzz.fuzz.WRatio">
+<span class="sig-prename descclassname"><span class="pre">rapidfuzz.fuzz.</span></span><span class="sig-name descname"><span class="pre">WRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor=&lt;cyfunction</span> <span class="pre">default_process&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_cutoff=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rapidfuzz.fuzz.WRatio" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="qratio">
+<h2>QRatio<a class="headerlink" href="#qratio" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rapidfuzz.fuzz.QRatio">
+<span class="sig-prename descclassname"><span class="pre">rapidfuzz.fuzz.</span></span><span class="sig-name descname"><span class="pre">QRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor=&lt;cyfunction</span> <span class="pre">default_process&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_cutoff=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rapidfuzz.fuzz.QRatio" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="string_metric.html" class="btn btn-neutral float-right" title="string_metric module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Max Bachmann.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
