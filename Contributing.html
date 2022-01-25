@@ -2,9 +2,12 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="#" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="License" href="License.html" /><link rel="prev" title="rapidfuzz.utils" href="Usage/utils.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2022.01.02"/><title>Search - RapidFuzz 2.0.0 documentation</title><link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.01.02"/>
+        <title>Contributing - RapidFuzz 2.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
     
@@ -131,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -145,7 +148,7 @@
   
   <span class="sidebar-brand-text">RapidFuzz 2.0.0 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -171,8 +174,8 @@
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Contributing.html">Contributing</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Contributing</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="License.html">License</a></li>
@@ -196,43 +199,128 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
-</div>
-</noscript>
-
-<div id="search-results"></div>
+          <section id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h1>
+<p>Interested in contributing to RapidFuzz? Want to report a bug?
+Before you do, please read the following guidelines.</p>
+<section id="submission-context">
+<h2>Submission context<a class="headerlink" href="#submission-context" title="Permalink to this headline">¶</a></h2>
+<section id="got-a-question-or-problem">
+<h3>Got a question or problem?<a class="headerlink" href="#got-a-question-or-problem" title="Permalink to this headline">¶</a></h3>
+<p>For questions you can reach us using
+<a class="reference external" href="https://github.com/maxbachmann/RapidFuzz/discussions">github discussions</a>.</p>
+</section>
+<section id="found-a-bug">
+<h3>Found a bug?<a class="headerlink" href="#found-a-bug" title="Permalink to this headline">¶</a></h3>
+<p>If you found a bug in the source code, you can help us by submitting an issue
+to the <a class="reference external" href="https://github.com/maxbachmann/rapidfuzz/issues">issue tracker</a>
+in our GitHub repository. Even better, you can submit a Pull Request with a fix.
+However, before doing so, please read the <a class="reference internal" href="#submission-guidelines"><span class="std std-ref">Submission guidelines</span></a>.</p>
+</section>
+<section id="missing-a-feature">
+<h3>Missing a feature?<a class="headerlink" href="#missing-a-feature" title="Permalink to this headline">¶</a></h3>
+<p>You can request a new feature by submitting an issue to our GitHub Repository.
+If you would like to implement a new feature, please submit an issue with a
+proposal for your work first, to be sure that it is of use for everyone.
+Please consider what kind of change it is:</p>
+<ul class="simple">
+<li><p>For a <strong>major feature</strong>, first open an issue and outline your proposal so
+that it can be discussed. This will also allow us to better coordinate our
+efforts, prevent duplication of work, and help you to craft the change so
+that it is successfully accepted into the project.</p></li>
+<li><p><strong>Small features and bugs</strong> can be crafted and directly submitted as a Pull
+Request. However, there is no guarantee that your feature will make it into
+the <cite>main</cite>, as it’s always a matter of opinion whether if benefits the
+overall functionality of the project.</p></li>
+</ul>
+</section>
+</section>
+<section id="submission-guidelines">
+<span id="id1"></span><h2>Submission guidelines<a class="headerlink" href="#submission-guidelines" title="Permalink to this headline">¶</a></h2>
+<section id="submitting-an-issue">
+<h3>Submitting an issue<a class="headerlink" href="#submitting-an-issue" title="Permalink to this headline">¶</a></h3>
+<p>Before you submit an issue, please search the issue tracker, maybe an issue for
+your problem already exists and the discussion might inform you of workarounds
+readily available.</p>
+</section>
+</section>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="License.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">License</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="Usage/utils.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">rapidfuzz.utils</div>
+                
+              </div>
+            </a>
         </div>
 
         <div class="related-information">
               Copyright &#169; 2021, Max Bachmann |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            | <a class="muted-link" href="_sources/Contributing.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
         </div>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Contributing</a><ul>
+<li><a class="reference internal" href="#submission-context">Submission context</a><ul>
+<li><a class="reference internal" href="#got-a-question-or-problem">Got a question or problem?</a></li>
+<li><a class="reference internal" href="#found-a-bug">Found a bug?</a></li>
+<li><a class="reference internal" href="#missing-a-feature">Missing a feature?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#submission-guidelines">Submission guidelines</a><ul>
+<li><a class="reference internal" href="#submitting-an-issue">Submitting an issue</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -242,8 +330,5 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>
