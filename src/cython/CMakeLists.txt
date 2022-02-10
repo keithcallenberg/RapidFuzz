@@ -40,3 +40,11 @@ target_include_directories(cpp_process_cdist PRIVATE ${RF_CAPI_PATH} ${RF_BASE_D
 target_link_libraries(cpp_process_cdist PRIVATE Taskflow rapidfuzz::rapidfuzz)
 python_extension_module(cpp_process_cdist)
 install(TARGETS cpp_process_cdist LIBRARY DESTINATION src/rapidfuzz)
+
+add_cython_target(cpp_process_eofm CXX)
+add_library(cpp_process_eofm MODULE ${cpp_process_eofm})
+target_compile_features(cpp_process_eofm PUBLIC cxx_std_14)
+target_include_directories(cpp_process_eofm PRIVATE ${RF_CAPI_PATH} ${RF_BASE_DIR}/src/cython ${NumPy_INCLUDE_DIR})
+target_link_libraries(cpp_process_eofm PRIVATE Taskflow rapidfuzz::rapidfuzz)
+python_extension_module(cpp_process_eofm)
+install(TARGETS cpp_process_eofm LIBRARY DESTINATION src/rapidfuzz)

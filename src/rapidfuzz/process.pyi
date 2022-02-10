@@ -156,5 +156,27 @@ try:
         **kwargs: Any
     ) -> np.ndarray: ...
 
+    @overload
+    def eofm(
+        queries: Iterable[S1],
+        choices: Iterable[S2], *,
+        scorer: Callable[..., ResultType] = ratio,
+        processor: Optional[bool] = None,
+        score_cutoff: Optional[ResultType] = None,
+        dtype: Optional[np.dtype] = None,
+        **kwargs: Any
+    ) -> np.ndarray: ...
+
+    @overload
+    def eofm(
+        queries: Iterable[S1],
+        choices: Iterable[S2], *,
+        scorer: Callable[..., ResultType] = ratio,
+        processor: Callable[[Union[S1, S2]], _StringType] = None,
+        score_cutoff: Optional[ResultType] = None,
+        dtype: Optional[np.dtype] = None,
+        **kwargs: Any
+    ) -> np.ndarray: ...
+
 except ImportError:
     pass

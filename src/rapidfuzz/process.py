@@ -9,3 +9,8 @@ except ImportError:
     def cdist(*args, **kwargs):
         raise NotImplementedError("implementation requires numpy to be installed")
 
+try:
+    from rapidfuzz.cpp_process_eofm import eofm
+except ImportError:
+    def eofm(*args, **kwargs):
+        raise NotImplementedError("implementation requires numpy to be installed")
